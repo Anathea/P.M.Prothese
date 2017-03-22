@@ -1,6 +1,6 @@
 <?php
 // connect.php sert à lier le site avec la base de données.
-$db = 'PMProthese';
+$db = 'user_p.m.prothese';
 $host = 'localhost';
 
 // Éventuellement à modifier en 'root' et 'root'

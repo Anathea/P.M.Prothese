@@ -27,7 +27,7 @@ SET
 WHERE 
 id = :id";
 $stmt = $pdo->prepare($sql);
-$stmt->execute([':id' => intval($cardId),
+$stmt->execute([':id' => intval($patientId),
             ':nom' => htmlentities($nom), 
             ':prenom' => htmlentities($prenom),
             ':secu' => intval($mana),
