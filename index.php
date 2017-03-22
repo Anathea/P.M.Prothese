@@ -45,7 +45,7 @@ function detach($patient_detach): string {
 
 //Affichage de tous les patients
 foreach ($patients as $one_patient) {
-    echo '<a href="one_patient.php"><div class="info_patients"><h3>' . $one_patient['prenom']. ' ' . $one_patient['nom'] . '</h3>';
+    echo '<a href="one_patient.php?id="' . $one_patient['id'] . '"><div class="info_patients"><h3>' . $one_patient['prenom']. ' ' . $one_patient['nom'] . '</h3>';
     echo '<p>Numéro de sécurité sociale : ' . $one_patient['secu'] . '</p>';
     echo '<p>Allergie(s) : ' . allergieOuPas($one_patient['allergie']) . '</p>';
     echo '<p>Type : ' . $one_patient['type'] . '</p>';

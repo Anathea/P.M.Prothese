@@ -1,5 +1,17 @@
 <?php
 
+// Cette page sert à modifier le profil d'un patient déjà existant.
+
+
+// Récupération et vérification de l'id
+// Renvoie vers index.php si l'id n'est pas valide
+if(isset($_GET['id'])){
+    $id = (int) $_GET['id'];
+} else {
+    header('Location: index.php');
+}
+
+// Récupération et vérification de l'id
 $id = $_POST['id'] ?? null;
 $nom = $_POST['nom'] ?? null;
 $prenom = $_POST['prenom'] ?? null;
@@ -19,7 +31,7 @@ echo '<h2>Modifier le profil patient :</h2>
 	<form method="post" action="do_update.php">
 		<div>
 			<label for="nom">Nom du patient :</label>
-			<input type="text" name="nom" id="nom" required>
+			<input type="text" name="nom" id="nom" value="' . $['nom'] . '"required>
 		</div>
 		<div>
 			<label for="prenom">Prénom du patient :</label>
