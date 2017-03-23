@@ -1,17 +1,16 @@
 <?php
 
-require_once "../connect.php";
-if(isset($_GET['id'])){
-    $id = (int) $_GET['id'];
-} else {
+require_once "requetes.php";
+
+$id = $_GET['id'] ?? NULL;
+
+if($id === NULL){
     header('Location: index.php');
 }
-$sql = "DELETE FROM
-    `patients` 
-WHERE 
-  id = :id
-;";
-$stmt = $pdo->prepare($sql);
-$stmt->bindValue(':id', $id, PDO::PARAM_INT);
-$stmt->execute();
+
+$id = (int) $id;
+
+$db = new DB();
+$db->del_one_patient($id);
+
 header('Location: index.php');
