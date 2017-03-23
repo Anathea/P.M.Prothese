@@ -1,22 +1,20 @@
 <?php
 
-require 'connect.php';
-require 'header.php';
+require 'requetes.php';
+require 'tools.php';
 
-if(isset($_GET['id'])){
-    $id = (int) $_GET['id'];
-} else {
+
+$id = $_GET['id'] ?? NULL;
+
+if($id === NULL){
     header('Location: index.php');
 }
 
-//Bloc récupération de données 
-$query = $db->prepare('SELECT id, nom, prenom, secu, allergie, type, caracteristique, detachable, longueur, largeur
-        FROM patients
-        WHERE id = :id');
-$query->execute();
-$patients = $query->fetchAll();
+$db = new DB();
+$one_patient = $db->get_one_patient($id);
 
-$one_patient = $patients[0];
+require 'header.php';
+
     echo '<div class="info_patients"><h3>' . $one_patient['prenom']. ' ' . $one_patient['nom'] . '</h3>';
     echo '<p>Numéro de sécurité sociale : ' . $one_patient['secu'] . '</p>';
     echo '<p>Allergie(s) : ' . allergieOuPas($one_patient['allergie']) . '</p>';
