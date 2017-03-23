@@ -35,4 +35,4 @@ $largeur = intval($largeur);
 $db = new DB();
 $db->add_one_patient($nom, $prenom, $secu, $allergie, $type, $caracteristique, $detachable, $longueur, $largeur);
 
-header('Location: index.php');
+header('Location: medecin.php');

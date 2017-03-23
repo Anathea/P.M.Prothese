@@ -10,7 +10,7 @@ require 'requetes.php';
 $id = $_GET['id'] ?? NULL;
 
 if($id === NULL){
-    header('Location: index.php');
+    header('Location: medecin.php');
 }
 
 $id = (int) $id;

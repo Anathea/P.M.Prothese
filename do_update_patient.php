@@ -14,7 +14,7 @@ $longueur = $_POST['longueur'] ?? '';
 $largeur = $_POST['largeur'] ?? '';
 
 if($id === NULL){
-    header('Location: index.php');
+    header('Location: medecin.php');
 }
 if ($nom === '' || $prenom === '' || $secu === '') {
     header('Location: update_patient.php?id=' . $id);
@@ -34,4 +34,4 @@ $largeur = intval($largeur);
 $db = new DB();
 $db->update_one_patient($id, $nom, $prenom, $secu, $allergie, $type, $caracteristique, $detachable, $longueur, $largeur);
 
-header('Location: index.php');
+header('Location: medecin.php');

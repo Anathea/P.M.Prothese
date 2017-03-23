@@ -5,7 +5,7 @@ require_once "requetes.php";
 $id = $_GET['id'] ?? NULL;
 
 if($id === NULL){
-    header('Location: index.php');
+    header('Location: medecin.php');
 }
 
 $id = (int) $id;
@@ -13,4 +13,4 @@ $id = (int) $id;
 $db = new DB();
 $db->del_one_patient($id);
 
-header('Location: index.php');
+header('Location: medecin.php');
