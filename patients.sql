@@ -32,7 +32,7 @@ CREATE TABLE `patients` (
   `prenom` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
   `secu` varchar(13) COLLATE utf8mb4_unicode_ci NOT NULL,
   `allergie` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type` varchar(13) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `caracteristique` int(1) NOT NULL DEFAULT '1',
   `detachable` int(1) NOT NULL DEFAULT '0',
   `longueur` int(11) NOT NULL,
